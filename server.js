@@ -4,12 +4,8 @@ const app = express();
 
 app.use(express.json());
 
-app.get("", (req, res) => {
-    res.send("Halo, ini API saya");
-})
-
-app.get("/api/user", (req, res) => {
-    res.json({
+const resJson = 
+    {
         "page": 2,
         "per_page": 6,
         "total": 12,
@@ -62,7 +58,14 @@ app.get("/api/user", (req, res) => {
             "url": "https://reqres.in/#support-heading",
             "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
         }
-    })
+    }
+
+app.get("", (req, res) => {
+    res.send("Halo, ini API saya");
+})
+
+app.get("/api/user", (req, res) => {
+    res.json(resJson)
 })
 
 const PORT = 8001
