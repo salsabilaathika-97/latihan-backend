@@ -9,7 +9,7 @@ app.get("", (req, res) => {
 })
 
 app.get("/api/user", (req, res) => {
-    res.send({
+    res.json({
         "page": 2,
         "per_page": 6,
         "total": 12,
